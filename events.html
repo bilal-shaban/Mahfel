@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كل الفعاليات — محفل</title>
+<meta name="description" content="تصفّح كل فعاليات الجامعة الافتراضية وفلترها حسب التصنيف والتاريخ والمكان.">
+<meta name="theme-color" content="#0a1311">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-dark" aria-label="التنقل الرئيسي">
+    <div class="container">
+      <a class="navbar-brand brand m-0" href="index.html">
+        <img src="images/logo.svg" alt="" width="46" height="46">
+        <span class="brand-text"><b>محفل</b><small>دليل فعاليات الجامعة الافتراضية</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="فتح القائمة"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-lg-auto mt-3 mt-lg-0"><li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li><li class="nav-item"><a class="nav-link active" href="events.html" aria-current="page">كل الفعاليات</a></li><li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li><li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li></ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><span class="sep">/</span><span>كل الفعاليات</span></nav>
+    <h1>أجندة الجامعة كاملة</h1>
+    <p>ابحث، صفِّ، واختر ما يناسب وقتك من أمسيات وبطولات وورش وحفلات الموسم.</p>
+  </div>
+</section>
+
+<main id="main" class="pb-5">
+  <div class="container">
+    <form class="toolbar" id="filters" onsubmit="return false" role="search" aria-label="فلترة الفعاليات">
+      <div class="row g-3 align-items-end position-relative" style="z-index:1">
+        <div class="col-md-6 col-lg-3"><label for="fQ">بحث</label><input id="fQ" type="search" class="form-control" placeholder="اسم الفعالية أو كلمة مفتاحية"></div>
+        <div class="col-6 col-lg-2"><label for="fCat">التصنيف</label><select id="fCat" class="form-select"><option value="">الكل</option></select></div>
+        <div class="col-6 col-lg-2"><label for="fPlace">الموقع</label><select id="fPlace" class="form-select"><option value="">الكل</option></select></div>
+        <div class="col-6 col-lg-2"><label for="fFrom">من تاريخ</label><input id="fFrom" type="date" class="form-control"></div>
+        <div class="col-6 col-lg-2"><label for="fTo">إلى تاريخ</label><input id="fTo" type="date" class="form-control"></div>
+        <div class="col-6 col-lg-1 d-grid"><button type="button" id="fReset" class="btn btn-outline-ink px-2" title="مسح الفلاتر"><i class="bi bi-arrow-counterclockwise"></i></button></div>
+        <div class="col-6 col-md-4 col-lg-3"><label for="fSort">الترتيب</label><select id="fSort" class="form-select"><option value="soon">الأقرب أولًا</option><option value="late">الأبعد أولًا</option></select></div>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="تصنيفات سريعة"></div>
+    </form>
+
+    <div class="result-bar"><span>عدد النتائج: <b id="count">0</b></span><span>مرتّبة حسب التاريخ</span></div>
+    <div class="alert alert-warning d-none" id="emptyBox" role="status"><i class="bi bi-search"></i> لا توجد فعاليات مطابقة. جرّب تغيير الفلاتر أو <strong>امسحها</strong> من الزر أعلاه.</div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="eventsGrid"></div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="52" height="52"><span class="brand-text"><b>محفل</b><small>دليل فعاليات الجامعة الافتراضية</small></span></a>
+        <p class="mt-3">دليلك إلى كل أمسية وبطولة وورشة وحفل في الجامعة الافتراضية؛ مكان واحد يجمع الأجندة ويقرّب الناس.</p>
+        <div class="socials">
+          <a href="#" aria-label="إنستغرام"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="إكس"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="يوتيوب"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="تيليجرام"><i class="bi bi-telegram"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h5>تصفّح</h5>
+        <ul><li><a href="index.html">الرئيسية</a></li><li><a href="events.html">كل الفعاليات</a></li><li><a href="about.html">عن الدليل</a></li><li><a href="contact.html">اتصل بنا</a></li></ul>
+      </div>
+      <div class="col-6 col-lg-4">
+        <h5>تواصل معنا</h5>
+        <ul>
+          <li><i class="bi bi-envelope"></i> events@virtual-uni.example</li>
+          <li><i class="bi bi-telephone"></i> <span dir="ltr">+963 11 000 0000</span></li>
+          <li><i class="bi bi-clock"></i> الأحد – الخميس، 9 ص – 4 م</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true">محفل</div>
+    <div class="copy"><span>© <span id="year">2026</span> دليل فعاليات الجامعة الافتراضية. جميع الحقوق محفوظة.</span><span>صُنع بعناية لمجتمع الجامعة</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
