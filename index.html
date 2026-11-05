@@ -1,145 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>محفل — دليل فعاليات الجامعة الافتراضية</title>
-<meta name="description" content="اكتشف أمسيات وبطولات وورش وحفلات الجامعة الافتراضية في مكان واحد.">
-<meta name="theme-color" content="#0a1311">
-<link rel="icon" href="images/logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
-<header class="site-header">
-  <nav class="navbar navbar-expand-lg navbar-dark" aria-label="التنقل الرئيسي">
-    <div class="container">
-      <a class="navbar-brand brand m-0" href="index.html">
-        <img src="images/logo.svg" alt="" width="46" height="46">
-        <span class="brand-text"><b>محفل</b><small>دليل فعاليات الجامعة الافتراضية</small></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="فتح القائمة"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-lg-auto mt-3 mt-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">الرئيسية</a></li><li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li><li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li><li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li></ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<section class="hero" id="hero">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-7 order-2 order-lg-1">
-        <p class="kicker">خريف 2026 · الموسم الثقافي</p>
-        <h1>حيث يلتقي <em>العلم</em> بالفنّ، وتُحكى الأيام</h1>
-        <p class="lead-serif">محفل هو دليل الجامعة الافتراضية إلى كل أمسية وبطولة وورشة وحفل. اكتشف ما يستحق وقتك، واحجز مكانك قبل أن يبدأ العرض.</p>
-        <div class="d-flex flex-wrap gap-3 mt-4">
-          <a class="btn btn-gold" href="events.html">استكشف الفعاليات <i class="bi bi-arrow-left"></i></a>
-          <a class="btn btn-ghost" href="#featured">بارز هذا الأسبوع</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>محفل — دليل فعاليات الجامعة الافتراضية</title>
+    <meta
+      name="description"
+      content="اكتشف أمسيات وبطولات وورش وحفلات الجامعة الافتراضية في مكان واحد."
+    />
+    <meta name="theme-color" content="#0a1311" />
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap 5 (RTL) and icons from CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Our styles (override Bootstrap) -->
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <!-- Apply the saved theme before the page paints (no flash) -->
+    <script>
+      try {
+        var t = localStorage.getItem("mahfil_theme") || "light";
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.setAttribute("data-bs-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    
+    <!-- Header -->
+    <header class="site-header">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        aria-label="التنقل الرئيسي"
+      >
+        <div class="container">
+          <a class="navbar-brand brand m-0" href="index.html">
+            <img src="assets/img/logo.svg" alt="" width="46" height="46" />
+            <span class="brand-text"> <b>محفل</b><small>دليل فعاليات الجامعة الافتراضية</small></span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="فتح القائمة"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-lg-auto mt-3 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html" aria-current="page"
+                  >الرئيسية</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="events.html">كل الفعاليات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">عن الدليل</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">اتصل بنا</a>
+              </li>
+            </ul>
+            <!-- Dark mode toggle (bonus) -->
+            <button
+              id="themeToggle"
+              class="btn theme-toggle"
+              type="button"
+              aria-label="التبديل إلى الوضع الداكن"
+            >
+              <i class="bi bi-moon-stars"></i>
+            </button>
+          </div>
         </div>
-        <dl class="stats">
-          <div><dt data-count="events">0</dt><dd>فعالية قادمة</dd></div>
-          <div><dt data-count="cats">0</dt><dd>تصنيفات</dd></div>
-          <div><dt data-count="places">0</dt><dd>قاعات ومنصّات</dd></div>
-        </dl>
-      </div>
-      <div class="col-lg-5 order-1 order-lg-2">
-        <div class="arch-wrap">
-          <div class="arch"><img src="images/hero.svg" alt="عمل فني مجرّد بأقواس ذهبية يرمز إلى محفل"></div>
-          <div class="seal"><b>12</b><span>فعالية</span></div>
+      </nav>
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 order-2 order-lg-1">
+            <h1>حيث يلتقي <em>العلم</em> بالفنّ، وتُحكى الأيام</h1>
+            <p class="lead-serif">
+              محفل هو دليل فعاليات الجامعة الافتراضية من أمسية وبطولة وورشة وحفل.
+              اكتشف ما يستحق وقتك، واحجز مكانك قبل أن يبدأ العرض.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a class="btn btn-gold" href="events.html"
+                >استكشف الفعاليات <i class="bi bi-arrow-left"></i
+              ></a>
+              <a class="btn btn-ghost" href="#featured">بارز هذا الأسبوع</a>
+            </div>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2">
+            <div class="arch-wrap">
+              <div class="arch">
+                <img
+                  src="assets/img/hero.svg"
+                  alt="صورة محفل الذهبية"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+    </section>
 
-<main id="main">
-  <section class="section section-dark" id="featured">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div><span class="idx">— ٠١ · الأسبوع</span><h2>فعاليات بارزة هذا الأسبوع</h2></div>
-        <div class="rule"></div>
-        <a class="btn btn-ghost btn-sm" href="events.html">كل الفعاليات</a>
-      </div>
-      <div id="featSlider" tabindex="0" aria-roledescription="شريط عرض" aria-label="الفعاليات البارزة">
-        <div class="slides" aria-live="off"></div>
-        <div class="slider-ctrl">
-          <button class="sl-btn sl-prev" aria-label="السابق"><i class="bi bi-arrow-right"></i></button>
-          <button class="sl-btn sl-next" aria-label="التالي"><i class="bi bi-arrow-left"></i></button>
-          <div class="sl-dots"><span class="sl-dots-list d-flex"></span><div class="sl-progress"><i></i></div></div>
+    <!-- Category strip -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee"></div>
+    </div>
+    
+    <!-- Main -->
+    <main id="main">
+      <!-- 1. Featured events slider -->
+      <section class="section section-dark" id="featured">
+        <div class="container">
+          <div class="sec-head">
+            <div>
+              <span class="idx">— ٠١ · الأسبوع</span>
+              <h2>فعاليات بارزة هذا الأسبوع</h2>
+            </div>
+            <div class="rule"></div>
+            <a class="btn btn-ghost btn-sm" href="events.html">كل الفعاليات</a>
+          </div>
+          <div
+            id="featSlider"
+            tabindex="0"
+            aria-roledescription="شريط عرض"
+            aria-label="الفعاليات البارزة"
+          >
+            <div class="slides" aria-live="off"></div>
+            <div class="slider-ctrl">
+              <button class="sl-btn sl-prev" aria-label="السابق">
+                <i class="bi bi-arrow-right"></i>
+              </button>
+              <button class="sl-btn sl-next" aria-label="التالي">
+                <i class="bi bi-arrow-left"></i>
+              </button>
+              <div class="sl-dots">
+                <span class="sl-dots-list d-flex"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 2. Quick categories -->
+      <section class="section" id="categories">
+        <div class="container">
+          <div class="sec-head">
+            <div>
+              <span class="idx">— ٠٢ · تصفّح بالاهتمام</span>
+              <h2>تصنيفات سريعة</h2>
+              <p>اختر ما يشبهك، وسننقلك مباشرة إلى فعالياته.</p>
+            </div>
+            <div class="rule"></div>
+          </div>
+          <div class="cat-wrap" id="catList"></div>
+        </div>
+      </section>
+      <!-- 3. Latest events -->
+      <section class="section pt-0" id="latest">
+        <div class="container">
+          <div class="sec-head">
+            <div>
+              <span class="idx">— ٠٣ · جديد الدليل</span>
+              <h2>أحدث الفعاليات</h2>
+            </div>
+            <div class="rule"></div>
+            <a class="btn btn-outline-ink btn-sm" href="events.html"
+              >عرض الكل <i class="bi bi-arrow-left"></i
+            ></a>
+          </div>
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"
+            id="latestGrid"
+          ></div>
+        </div>
+      </section>
+      <!-- 4. Project team (names and ids come from data.js) -->
+      <section class="section pt-0" id="team">
+        <div class="container">
+          <div class="sec-head">
+            <div>
+              <span class="idx">— ٠٤ · من صنع هذا الدليل</span>
+              <h2>فريق المشروع</h2>
+              <p>الطلبة المشاركون في إعداد الموقع.</p>
+            </div>
+            <div class="rule"></div>
+          </div>
+          <div class="row g-4 justify-content-center" id="teamGrid">
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <a class="brand" href="index.html"
+              ><img
+                src="assets/img/logo.svg"
+                alt=""
+                width="52"
+                height="52"
+              /><span class="brand-text"
+                ><b>محفل</b><small>دليل فعاليات الجامعة الافتراضية</small></span
+              ></a
+            >
+            <p class="mt-3">
+              دليلك إلى كل أمسية وبطولة وورشة وحفل في الجامعة الافتراضية؛ مكان
+              واحد يجمع لك كل ما تحب.
+            </p>
+            <div class="socials">
+              <a href="#" aria-label="إنستغرام"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" aria-label="إكس"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="يوتيوب"><i class="bi bi-youtube"></i></a>
+              <a href="#" aria-label="تيليجرام"
+                ><i class="bi bi-telegram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h5>تصفّح</h5>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="events.html">كل الفعاليات</a></li>
+              <li><a href="about.html">عن الدليل</a></li>
+              <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-4">
+            <h5>تواصل معنا</h5>
+            <ul>
+              <li><i class="bi bi-envelope"></i> events@virtual-uni.example</li>
+              <li>
+                <i class="bi bi-telephone"></i>
+                <span dir="ltr">+963 11 000 0000</span>
+              </li>
+              <li><i class="bi bi-clock"></i> الأحد – الخميس، 9 ص – 4 م</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wordmark" aria-hidden="true">محفل</div>
+        <div class="copy">
+          <span
+            > <span id="year">2026</span> دليل فعاليات الجامعة الافتراضية. جميع
+            الحقوق محفوظة.©</span
+          ><span>صُنع لك بعناية</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="categories">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div><span class="idx">— ٠٢ · تصفّح بالاهتمام</span><h2>تصنيفات سريعة</h2><p>اختر ما يشبهك، وسننقلك مباشرة إلى فعالياته.</p></div>
-        <div class="rule"></div>
-      </div>
-      <div class="cat-wrap" id="catList"></div>
-    </div>
-  </section>
-
-  <section class="section pt-0" id="latest">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div><span class="idx">— ٠٣ · جديد الدليل</span><h2>أحدث الفعاليات</h2></div>
-        <div class="rule"></div>
-        <a class="btn btn-outline-ink btn-sm" href="events.html">عرض الكل <i class="bi bi-arrow-left"></i></a>
-      </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="latestGrid"></div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container position-relative">
-      <h2>هل لديك فعالية تستحق أن تُروى؟</h2>
-      <p>شارك الجامعة مبادرتك؛ فريق التحرير يراجع كل طلب خلال ثلاثة أيام عمل.</p>
-      <a class="btn btn-gold" href="about.html#policies">اعرف شروط النشر</a>
-      <a class="btn btn-ghost ms-2" href="contact.html">راسلنا</a>
-    </div>
-  </section>
-</main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-5">
-        <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="52" height="52"><span class="brand-text"><b>محفل</b><small>دليل فعاليات الجامعة الافتراضية</small></span></a>
-        <p class="mt-3">دليلك إلى كل أمسية وبطولة وورشة وحفل في الجامعة الافتراضية؛ مكان واحد يجمع الأجندة ويقرّب الناس.</p>
-        <div class="socials">
-          <a href="#" aria-label="إنستغرام"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="إكس"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" aria-label="يوتيوب"><i class="bi bi-youtube"></i></a>
-          <a href="#" aria-label="تيليجرام"><i class="bi bi-telegram"></i></a>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3">
-        <h5>تصفّح</h5>
-        <ul><li><a href="index.html">الرئيسية</a></li><li><a href="events.html">كل الفعاليات</a></li><li><a href="about.html">عن الدليل</a></li><li><a href="contact.html">اتصل بنا</a></li></ul>
-      </div>
-      <div class="col-6 col-lg-4">
-        <h5>تواصل معنا</h5>
-        <ul>
-          <li><i class="bi bi-envelope"></i> events@virtual-uni.example</li>
-          <li><i class="bi bi-telephone"></i> <span dir="ltr">+963 11 000 0000</span></li>
-          <li><i class="bi bi-clock"></i> الأحد – الخميس، 9 ص – 4 م</li>
-        </ul>
-      </div>
-    </div>
-    <div class="wordmark" aria-hidden="true">محفل</div>
-    <div class="copy"><span>© <span id="year">2026</span> دليل فعاليات الجامعة الافتراضية. جميع الحقوق محفوظة.</span><span>صُنع بعناية لمجتمع الجامعة</span></div>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
-</body>
+    </footer>
+    
+    <!-- Scripts: Bootstrap, data, main -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
